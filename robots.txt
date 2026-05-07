@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skimr.app/sitemap.xml
+Sitemap: https://anubhavtewari7.github.io/skimr.app/sitemap.xml
