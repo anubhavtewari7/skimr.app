@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1611">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  <!-- Primary SEO -->
+  <title>Skimr — AI Cliff Notes, Flashcards & Recall Quizzes for Any Article or PDF</title>
+  <meta name="description" content="Free Chrome extension that turns any article or PDF into AI-generated Cliff Notes, flashcards, and a multiple-choice recall quiz. No account, runs locally, free forever.">
+  <meta name="keywords" content="AI Cliff Notes, AI flashcards, MCQ generator, recall quiz, active recall, study Chrome extension, PDF summary tool, article summary, free study tool, Chrome extension for studying, AI research assistant, Skimr">
+  <meta name="author" content="Anu Tewari">
+  <link rel="canonical" href="https://skimr.app/">
+
+  <!-- Open Graph (Facebook, LinkedIn, Slack, iMessage, Discord) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Skimr">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Skimr — Read once. Understand for good.">
+  <meta property="og:description" content="Free Chrome extension that turns any article or PDF into AI-generated Cliff Notes, flashcards, and a recall quiz. No account. Runs locally. Free forever.">
+  <meta property="og:url" content="https://skimr.app/">
+  <meta property="og:image" content="https://skimr.app/og-image.png">
+  <meta property="og:image:secure_url" content="https://skimr.app/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Skimr — AI Research Assistant. Read once. Understand for good. Free Chrome Extension.">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skimr — Read once. Understand for good.">
+  <meta name="twitter:description" content="Free Chrome extension that turns any article or PDF into AI-generated Cliff Notes, flashcards, and a recall quiz.">
+  <meta name="twitter:image" content="https://skimr.app/og-image.png">
+  <meta name="twitter:image:alt" content="Skimr — AI Research Assistant. Free Chrome Extension.">
+
+  <!-- Schema.org JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Skimr",
+    "alternateName": "Skimr — AI Research Assistant",
+    "description": "Free Chrome extension that turns any article or PDF into AI-generated Cliff Notes, flashcards, and a multiple-choice recall quiz. No account, runs locally on the device.",
+    "applicationCategory": "BrowserApplication",
+    "applicationSubCategory": "EducationalApplication",
+    "operatingSystem": "Chrome",
+    "url": "https://skimr.app/",
+    "downloadUrl": "https://chromewebstore.google.com/detail/skimr-ai-research-assista/debkfmbmiclogelelchlmpebpfpcaijb",
+    "installUrl": "https://chromewebstore.google.com/detail/skimr-ai-research-assista/debkfmbmiclogelelchlmpebpfpcaijb",
+    "image": "https://skimr.app/og-image.png",
+    "screenshot": "https://skimr.app/og-image.png",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Anu Tewari"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Anu Tewari"
+    },
+    "softwareVersion": "1.0",
+    "featureList": "AI Cliff Notes, Auto-generated Flashcards, Multiple-Choice Quiz Mode, Custom AI Q&A, Save to Vault, Markdown and PDF Export"
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Skimr really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The full feature set is free forever. No tier, no upsell, no Pro version locked behind a paywall."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to sign up to use Skimr?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no account, no email field, no password, no login screen. You install the extension and use it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is my data stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Locally on your device. Your Vault, flashcards, summaries, and quizzes never leave your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Skimr work on PDFs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Open any PDF in Chrome and Skimr can summarize, flashcard, and quiz it the same way it does for web articles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export what I save?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Vault entries can be exported as PDF or Markdown, which works directly with Obsidian, Notion, NotebookLM, and any other knowledge-base tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who built Skimr?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anu Tewari. Originally a side project to fix my own habit of forgetting articles a week after reading them. Skimr makes active recall, the most evidence-backed study technique in cognitive science, actually frictionless to use."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #f0f0ec;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+      color: #0d1611;
+      text-decoration: none;
+    }
+    .logo span { color: #16a34a; }
+    .header-cta {
+      background: #0d1611;
+      color: white;
+      padding: 11px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header-cta:hover { background: #16a34a; }
+
+    /* HERO */
+    .hero {
+      padding: 90px 0 70px;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #fafaf7 100%);
+    }
+    .hero h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 72px;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      margin-bottom: 28px;
+      color: #0d1611;
+      font-weight: 500;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #16a34a;
+      font-weight: 500;
+    }
+    .hero .subtitle {
+      font-size: 22px;
+      color: #555;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      line-height: 1.5;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .btn-primary {
+      background: #16a34a;
+      color: white;
+      padding: 17px 34px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.28);
+    }
+    .btn-primary:hover {
+      background: #15803d;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(22, 163, 74, 0.36);
+    }
+    .btn-secondary {
+      color: #0d1611;
+      padding: 17px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 17px;
+    }
+    .btn-secondary:hover { color: #16a34a; }
+    .meta-info {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      align-items: center;
+      color: #888;
+      font-size: 14.5px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    .meta-info span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .check {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: #16a34a;
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .check::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 7px;
+      width: 4px;
+      height: 7px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .video-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(13, 22, 17, 0.18);
+      background: #0d1611;
+      position: relative;
+    }
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 110px 0;
+      background: #ffffff;
+    }
+    .section-eyebrow {
+      color: #16a34a;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #0d1611;
+      letter-spacing: -0.025em;
+      font-weight: 500;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .feature {
+      background: #fafaf7;
+      padding: 38px 30px;
+      border-radius: 18px;
+      border: 1px solid #f0f0ec;
+      transition: all 0.25s ease;
+    }
+    .feature:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(13, 22, 17, 0.06);
+    }
+    .feature .icon {
+      width: 52px;
+      height: 52px;
+      background: #e8f5e9;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      font-size: 26px;
+    }
+    .feature h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #0d1611;
+      letter-spacing: -0.01em;
+    }
+    .feature p {
+      color: #555;
+      font-size: 15.5px;
+      line-height: 1.6;
+    }
+
+    /* PRIVACY */
+    .privacy {
+      padding: 110px 0;
+      background: #0d1611;
+      color: white;
+      text-align: center;
+    }
+    .privacy .section-eyebrow { color: #7AE582; }
+    .privacy .section-title {
+      color: white;
+    }
+    .privacy .section-title em {
+      color: #7AE582;
+      font-style: italic;
+    }
+    .privacy .lead {
+      font-size: 19px;
+      color: #b8c5c9;
+      max-width: 660px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+    }
+    .privacy-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 36px;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .privacy-point h4 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #7AE582;
+    }
+    .privacy-point p {
+      color: #b8c5c9;
+      font-size: 15.5px;
+      line-height: 1.6;
+    }
+
+    /* AUDIENCE */
+    .audience { padding: 110px 0; background: #fafaf7; }
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .audience-item {
+      padding: 22px 26px;
+      background: white;
+      border-radius: 12px;
+      font-size: 16px;
+      color: #1a1a1a;
+      border: 1px solid #f0f0ec;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .audience-item .emoji {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 110px 0;
+      background: #ffffff;
+    }
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      padding: 28px 0;
+      border-bottom: 1px solid #f0f0ec;
+    }
+    .faq-item h4 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0d1611;
+      letter-spacing: -0.01em;
+    }
+    .faq-item p { color: #555; font-size: 15.5px; line-height: 1.65; }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      color: white;
+      padding: 110px 0;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 56px;
+      margin-bottom: 24px;
+      letter-spacing: -0.025em;
+      font-weight: 500;
+    }
+    .final-cta p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-final {
+      background: white;
+      color: #15803d;
+      padding: 19px 42px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      display: inline-block;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .btn-final:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 56px 0 40px;
+      background: #0d1611;
+      color: #b8c5c9;
+      font-size: 14px;
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      color: white;
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .footer-logo span { color: #7AE582; }
+    footer ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    footer a {
+      color: #b8c5c9;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: #7AE582; }
+    .footer-tagline {
+      color: #82959B;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .hero { padding: 60px 0 50px; }
+      .hero h1 { font-size: 44px; }
+      .hero .subtitle { font-size: 18px; }
+      .section-title { font-size: 34px; }
+      .features, .privacy, .audience, .faq { padding: 70px 0; }
+      .final-cta { padding: 80px 0; }
+      .final-cta h2 { font-size: 38px; }
+      footer .container { flex-direction: column; text-align: center; }
+      footer ul { flex-wrap: wrap; justify-content: center; gap: 18px; }
+      .meta-info { gap: 18px; font-size: 13.5px; }
+      .video-container { border-radius: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="#" class="logo">Skim<span>r</span></a>
+      <a href="https://chromewebstore.google.com/detail/skimr-ai-research-assista/debkfmbmiclogelelchlmpebpfpcaijb" class="header-cta" target="_blank" rel="noopener noreferrer">Add to Chrome — Free</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Read once. <em>Understand</em> for good.</h1>
+      <p class="subtitle">Free Chrome extension that turns any article or PDF into AI Cliff Notes, flashcards, and a quick recall quiz — so you actually retain what you read.</p>
+
+      <div class="cta-row">
+        <a href="https://chromewebstore.google.com/detail/skimr-ai-research-assista/debkfmbmiclogelelchlmpebpfpcaijb" class="btn-primary" target="_blank" rel="noopener noreferrer">
+          Add to Chrome — Free →
+        </a>
+        <a href="#features" class="btn-secondary">See how it works</a>
+      </div>
+
+      <div class="meta-info">
+        <span><span class="check"></span>Free forever</span>
+        <span><span class="check"></span>No account</span>
+        <span><span class="check"></span>No tracking</span>
+        <span><span class="check"></span>Stores locally</span>
+      </div>
+
+      <div class="video-container">
+        <video controls autoplay muted loop playsinline preload="metadata"
+               poster="https://skimr.app/og-image.png"
+               aria-label="Skimr demo video showing AI Cliff Notes, auto-generated flashcards, and quiz mode in action on a Wikipedia article about photosynthesis"
+               title="Skimr demo: AI Cliff Notes, flashcards, and quiz from any article">
+          <source src="https://pub.hyperagent.com/api/published/s7pjqwtQVjD9c8H50Yp-eA/skimr_demo_horizontal_laom_outro_trimmed.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-eyebrow">What it does</div>
+      <h2 class="section-title">Six features. One sidebar. Every page you read.</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="icon">📝</div>
+          <h3>Instant Cliff Notes</h3>
+          <p>Auto-summarize any article or PDF into key concepts, claims, and citations. The signal, not the noise.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🃏</div>
+          <h3>Auto Flashcards</h3>
+          <p>Study-ready flashcards generated from the source material. Tap to reveal answers.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h3>Quiz Mode</h3>
+          <p>Multiple-choice quiz to test what stuck. See exactly which concepts you missed and why.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🤖</div>
+          <h3>Ask Anything</h3>
+          <p>Custom Q&amp;A grounded in the page itself — no hallucinations from the wider web.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📚</div>
+          <h3>Save to Vault</h3>
+          <p>Organize your study cards in one place. Export to PDF or Markdown for Obsidian, Notion, or NotebookLM.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">⚡</div>
+          <h3>Built for Speed</h3>
+          <p>Side-panel UI stays out of your way until you need it. No tab switching, no copy-paste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy">
+    <div class="container">
+      <div class="section-eyebrow">Privacy</div>
+      <h2 class="section-title">Private. <em>By default.</em></h2>
+      <p class="lead">Most "AI study tools" require an account, send your reading history to their servers, and reserve the right to train on your data. Skimr does the opposite.</p>
+      <div class="privacy-points">
+        <div class="privacy-point">
+          <h4>No Account</h4>
+          <p>Install the extension and use it. No sign-up, no email, no password, no profile to create.</p>
+        </div>
+        <div class="privacy-point">
+          <h4>Stored Locally</h4>
+          <p>Your Cliff Notes, flashcards, quizzes, and Vault stay on your device. Nothing syncs to any server.</p>
+        </div>
+        <div class="privacy-point">
+          <h4>No Tracking</h4>
+          <p>No analytics, no ad pixels, no "anonymized" data collection in the background.</p>
+        </div>
+        <div class="privacy-point">
+          <h4>Free Forever</h4>
+          <p>No subscription, no upgrade tier, no paywall. The full feature set is permanently free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="audience">
+    <div class="container">
+      <div class="section-eyebrow">Who it's for</div>
+      <h2 class="section-title">Built for serious readers</h2>
+      <div class="audience-grid">
+        <div class="audience-item"><span class="emoji">📚</span><span>Students working through assigned reading</span></div>
+        <div class="audience-item"><span class="emoji">🎓</span><span>Doctoral researchers managing dense literature</span></div>
+        <div class="audience-item"><span class="emoji">⚖️</span><span>Pre-med, pre-law, exam-prep students using active recall</span></div>
+        <div class="audience-item"><span class="emoji">🌍</span><span>ESL and international students re-reading dense English texts</span></div>
+        <div class="audience-item"><span class="emoji">💼</span><span>Knowledge workers studying technical documentation</span></div>
+        <div class="audience-item"><span class="emoji">🧠</span><span>Anyone who uses Anki, Obsidian, or NotebookLM as a study system</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title">Common questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>Is Skimr really free?</h4>
+          <p>Yes. The full feature set is free forever. No tier, no upsell, no "Pro" version locked behind a paywall.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do I need to sign up?</h4>
+          <p>No. There's no account, no email field, no password, no login screen. You install the extension and use it.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Where is my data stored?</h4>
+          <p>Locally on your device. Your Vault, flashcards, summaries, and quizzes never leave your browser.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Does it work on PDFs?</h4>
+          <p>Yes. Open any PDF in Chrome and Skimr can summarize, flashcard, and quiz it the same way it does for web articles.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I export what I save?</h4>
+          <p>Yes. Vault entries can be exported as PDF or Markdown — works directly with Obsidian, Notion, NotebookLM, and any other knowledge-base tool.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Who built this?</h4>
+          <p>Anu Tewari. Originally a side project to fix my own habit of forgetting articles a week after reading them. Skimr makes active recall, the most evidence-backed study technique in cognitive science, actually frictionless to use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>Stop re-reading.<br>Start retaining.</h2>
+      <p>Free Chrome extension. Two-minute install. Runs on every web article and PDF you open.</p>
+      <a href="https://chromewebstore.google.com/detail/skimr-ai-research-assista/debkfmbmiclogelelchlmpebpfpcaijb" class="btn-final" target="_blank" rel="noopener noreferrer">Add to Chrome — Free</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>
+        <div class="footer-logo">Skim<span>r</span></div>
+        <div class="footer-tagline">AI Research Assistant · Free Chrome Extension</div>
+      </div>
+      <ul>
+        <li><a href="https://chromewebstore.google.com/detail/skimr-ai-research-assista/debkfmbmiclogelelchlmpebpfpcaijb" target="_blank" rel="noopener noreferrer">Chrome Web Store</a></li>
+        <li><a href="https://github.com/anubhavtewari7/Skimr-extension" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="mailto:anubhavtewari7@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
